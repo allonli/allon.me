@@ -690,44 +690,17 @@ const html = `<!doctype html>
     }
 
     .toolbar-inner {
-      display: grid;
-      grid-template-columns: minmax(220px, 340px) 1fr;
-      gap: 14px;
-      align-items: start;
-    }
-
-    .search-box {
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 10px;
-      height: 46px;
-      padding: 0 14px;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--radius);
-      background: rgba(255, 250, 241, .78);
-      box-shadow: 0 6px 18px rgba(68, 48, 25, .06);
-    }
-
-    .search-box input {
-      width: 100%;
-      border: 0;
-      outline: 0;
-      background: transparent;
-      color: var(--ink);
-      font-size: 15px;
-    }
-
-    .search-mark {
-      color: var(--red);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-weight: 700;
     }
 
     .era-tabs {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      justify-content: flex-end;
+      justify-content: center;
+      width: 100%;
     }
 
     .era-tab {
@@ -1574,6 +1547,12 @@ const html = `<!doctype html>
       font-size: 13px;
     }
 
+    .book-page.original-page {
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      overflow: hidden;
+    }
+
     .book-source a {
       color: var(--red);
     }
@@ -2283,7 +2262,6 @@ const html = `<!doctype html>
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .toolbar-inner,
       .intro,
       .reader-grid {
         grid-template-columns: 1fr;
@@ -2443,7 +2421,7 @@ const html = `<!doctype html>
         <div class="hero-copy">
           <p class="eyebrow">司馬光編年巨著 · 上起周威烈王二十三年，下迄後周顯德六年</p>
           <h1>資治通鑑<br>全卷提要</h1>
-          <p class="hero-subtitle">把 294 卷拆成可以浏览、检索和反复回看的阅读地图：每卷卡片保留竖排原文摘读，点开后进入本卷总结与本卷原文。</p>
+          <p class="hero-subtitle">把 294 卷拆成可以浏览和反复回看的阅读地图：每卷卡片保留竖排原文摘读，点开后进入本卷总结与本卷原文。</p>
         </div>
 
         <div class="hero-meta" aria-label="全书概览">
@@ -2457,10 +2435,6 @@ const html = `<!doctype html>
 
     <nav class="toolbar" aria-label="卷目筛选">
       <div class="wrap toolbar-inner">
-        <label class="search-box">
-          <span class="search-mark">⌕</span>
-          <input id="searchInput" type="search" placeholder="搜卷号、朝代、纪年、正文关键词" autocomplete="off" />
-        </label>
         <div id="eraTabs" class="era-tabs"></div>
       </div>
     </nav>
@@ -2482,7 +2456,7 @@ const html = `<!doctype html>
           <div class="section-head">
             <div>
               <h2 id="volumeHeading">周纪 · 前403-前256</h2>
-              <p id="volumeSubheading">按朝代浏览；也可以直接搜索当前朝代卷内正文。</p>
+              <p id="volumeSubheading">按朝代浏览当前卷目。</p>
             </div>
             <div id="resultCount" class="count-pill">5 卷</div>
           </div>
@@ -2531,7 +2505,6 @@ const html = `<!doctype html>
     let selectedEra = "zhou";
     let selectedVolume = 1;
     let currentPage = 1;
-    let query = "";
     let readerVolume = 1;
     let readerMode = "summary";
     let activeLoadToken = "";
@@ -2606,22 +2579,7 @@ const html = `<!doctype html>
     }
 
     function matchesVolume(volume) {
-      const activeEra = volume.era.id === selectedEra;
-      if (!query) return activeEra;
-      const haystack = [
-        volume.number,
-        volume.title,
-        volume.chapter,
-        volume.era.name,
-        volume.summary,
-        volume.summaryYears,
-        volume.mdSummary?.plain || "",
-        ...volume.events,
-        ...volume.keywords,
-        ...volume.themes,
-        ...volume.previewBlocks.map((block) => block.text)
-      ].join(" ").toLowerCase();
-      return activeEra && haystack.includes(query.toLowerCase());
+      return volume.era.id === selectedEra;
     }
 
     function excerptFor(volume) {
@@ -2852,15 +2810,10 @@ const html = `<!doctype html>
       byId("eraOverview").innerHTML = [
         '<div class="overview-item"><b>' + escapeHtml(active.name) + '</b><span>' + escapeHtml(active.years) + " · " + count + " 卷 · 占 " + shareFor(count) + "%</span></div>",
         '<div class="overview-item"><b>阅读主轴</b><span>' + escapeHtml(active.lens || "编年通览") + '</span></div>',
-        '<div class="overview-item"><b>当前结果</b><span>' + filteredVolumes.length + " 卷匹配 · 第 " + currentPage + "/" + totalPages + " 页" + (query ? " · 搜索「" + escapeHtml(query) + "」" : "") + '</span></div>'
+        '<div class="overview-item"><b>当前结果</b><span>' + filteredVolumes.length + " 卷 · 第 " + currentPage + "/" + totalPages + " 页</span></div>"
       ].join("");
-      if (query) {
-        byId("volumeHeading").textContent = "搜索「" + query + "」";
-        byId("volumeSubheading").textContent = active.name + "范围 · 重点：" + focus.join(" / ");
-      } else {
-        byId("volumeHeading").textContent = active.name + " · " + active.years;
-        byId("volumeSubheading").textContent = "重点：" + focus.join(" / ");
-      }
+      byId("volumeHeading").textContent = active.name + " · " + active.years;
+      byId("volumeSubheading").textContent = "重点：" + focus.join(" / ");
       byId("resultCount").textContent = filteredVolumes.length + " 卷";
     }
 
@@ -2911,8 +2864,8 @@ const html = `<!doctype html>
       const blocks = Array.isArray(original.blocks) && original.blocks.length ? original.blocks : volume.previewBlocks;
       const chars = original.chars || blocks.reduce((total, item) => total + (item.text || "").length, 0);
       return '<div class="book-spread is-original">' +
-        '<article class="book-page book-page-full">' +
-          '<div class="book-source"><span>' + escapeHtml("本卷原文 · 全文 " + blocks.length + " 段 / 约 " + formatCount(chars) + " 字 · 绿色小注 " + formatCount(original.noteCount || volume.noteCount) + " 处") + '</span></div>' +
+        '<article class="book-page book-page-full original-page">' +
+          '<div class="book-source"><span>' + escapeHtml("本卷原文 · 全文 " + blocks.length + " 段 / 约 " + formatCount(chars) + " 字 · 绿色小注 " + formatCount(original.noteCount || volume.noteCount) + " 处") + '</span><span>' + escapeHtml(sourceLabel) + '</span></div>' +
           '<div class="vertical-reader"><div class="epub-text">' + renderEpubBlocks(blocks) + '</div></div>' +
         '</article>' +
       '</div>';
@@ -3057,14 +3010,6 @@ const html = `<!doctype html>
       }
       renderVolumes(filteredVolumes);
     }
-
-    byId("searchInput").addEventListener("input", (event) => {
-      query = event.target.value.trim();
-      currentPage = 1;
-      const firstMatch = volumes.find(matchesVolume);
-      if (firstMatch) selectedVolume = firstMatch.number;
-      render();
-    });
 
     byId("overlayClose").addEventListener("click", closeOriginal);
     byId("textOverlay").addEventListener("click", (event) => {

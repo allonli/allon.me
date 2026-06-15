@@ -46,14 +46,7 @@ tools/
 
 ### 浮层阅读器
 - 点击卷卡片打开浮层
-- 两种模式：「本卷总结」（Markdown 渲染）和「本卷原文」（竖排阅读）
-- 本卷原文支持子模式切换：
-  - **分页模式**：transform 翻页，左右箭头/键盘翻页，带进度条和页码显示（如"第 3 / 8 页"）
-  - **连续滚动**：原生 `overflow-x: auto` 滚动，隐藏翻页按钮和进度条，显示"连续滚动"
-- 竖排古文 `writing-mode: vertical-rl`，行文从右到左。分页时 offset=0 起始于最右侧（文本开头），offset 增大向左翻页
-- 分页模式通过 `setOriginalOffset` 操作 `--original-offset` CSS 变量驱动 `translateX`
-- 滚轮事件：分页模式拦截并触发翻页（60px 阈值 + 180ms 锁定），连续模式放行原生滚动
-- 滚动条在浮层内完全隐藏（`scrollbar-width: none` + `::-webkit-scrollbar { display: none }`），适用于 `.book-page`、`.vertical-reader`、`.original-page-viewport`
+- 两种模式：「本卷总结」（Markdown 渲染）和「本卷原文」（竖排连续阅读）
 - 朝代总览也有独立浮层
 
 ## 关键 JS 数据结构

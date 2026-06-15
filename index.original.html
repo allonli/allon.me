@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>allon.me</title>
+  <meta name="description" content="allon 的个人主页：读书摘录、随笔与工具入口" />
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.04);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --line: rgba(255,255,255,.12);
+      --accent: #8ab4ff;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--text);
+      background: radial-gradient(1200px 700px at 12% 10%, rgba(138,180,255,.22), transparent 55%),
+                  radial-gradient(900px 600px at 78% 18%, rgba(126,231,199,.14), transparent 55%),
+                  radial-gradient(900px 700px at 55% 85%, rgba(255,255,255,.08), transparent 60%),
+                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+                   "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+      line-height:1.65;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:48px 18px 64px}
+    .hero{
+      display:flex;gap:18px;align-items:flex-start;justify-content:space-between;
+      padding:22px 22px 18px;border:1px solid var(--line);border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      box-shadow:var(--shadow);
+    }
+    .title{margin:0;font-size:28px;letter-spacing:.4px}
+    .sub{margin:8px 0 0;color:var(--muted)}
+    .pillbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .grid{display:grid;grid-template-columns:1.3fr .7fr;gap:14px;margin-top:14px}
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--card);
+      padding:18px;
+    }
+    .card h2{margin:0 0 10px;font-size:16px;letter-spacing:.3px}
+    .muted{color:var(--muted)}
+    .list{margin:0;padding-left:18px}
+    .list li{margin:6px 0}
+    .quote{
+      padding:14px 14px 14px 16px;
+      border-left:3px solid rgba(138,180,255,.7);
+      background:var(--card2);
+      border-radius:14px;
+    }
+    .quote p{margin:0}
+    .quote .src{margin-top:8px;font-size:12px;color:var(--muted)}
+    .footer{margin-top:18px;color:var(--muted);font-size:12px}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:12px;padding:2px 6px;border:1px solid var(--line);border-radius:8px;background:rgba(0,0,0,.18);color:rgba(255,255,255,.82)}
+    @media (max-width:860px){.grid{grid-template-columns:1fr}.hero{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <h1 class="title">allon.me</h1>
+        <p class="sub">一页式小站：读书摘录、随笔片段、以及我常用的工具入口。</p>
+        <div class="pillbar">
+          <span class="pill">主题：读史 · 练字 · 写代码</span>
+          <span class="pill">风格：少即是多</span>
+          <span class="pill">更新时间：<span class="kbd">2026-05-28</span></span>
+        </div>
+      </div>
+      <div class="pillbar" style="justify-content:flex-end">
+        <span class="pill">工具入口：暂不公开</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>资治通鉴摘录（随手记）</h2>
+        <div class="quote">
+          <p>“夫以铜为镜，可以正衣冠；以古为镜，可以知兴替；以人为镜，可以明得失。”</p>
+          <div class="src">— 《资治通鉴》所载（太宗语意）</div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="quote">
+          <p>“治天下之道，贵在得人；得人之要，在于知人；知人之难，在于察其所安。”</p>
+          <div class="src">— 读史杂记（节录意）</div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="quote">
+          <p>“天下之患，常起于忽微；国家之败，多成于因循。”</p>
+          <div class="src">— 读《通鉴》笔记（节录意）</div>
+        </div>
+        <p class="muted" style="margin:12px 0 0">注：以上为摘录/意译式卡片，后续我会逐条补上卷次与原文对照。</p>
+      </article>
+
+      <aside class="card">
+        <h2>本站说明</h2>
+        <ul class="list">
+          <li>这是主站页面，后续会逐步补上文章与导航。</li>
+          <li>站点风格会持续保持简洁，尽量少依赖、少打扰。</li>
+        </ul>
+        <div style="height:10px"></div>
+        <h2>一句话</h2>
+        <p class="muted">把复杂的事情，做到可验证；把可验证的事情，做到可复用。</p>
+        <div class="footer">© allon.me</div>
+      </aside>
+    </section>
+
+    <div class="footer">提示：如果你看到的是旧页面，可能是浏览器缓存；强制刷新即可。</div>
+  </div>
+</body>
+</html>

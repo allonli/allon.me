@@ -1,0 +1,53 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - text: 通
+          - text: 鑑
+        - generic [ref=e7]: allon.me · 全卷概要 · 全文原文阅读
+      - generic [ref=e8]:
+        - paragraph [ref=e9]: 司馬光編年巨著 · 上起周威烈王二十三年，下迄後周顯德六年
+        - heading "資治通鑑 全卷提要" [level=1] [ref=e10]:
+          - text: 資治通鑑
+          - text: 全卷提要
+        - paragraph [ref=e11]: 把 294 卷拆成可以浏览、检索和反复回看的阅读地图：现代摘要梳理脉络，全文原文以书页式竖排展开，保留古书的阅读气息。
+      - generic "全书概览" [ref=e12]:
+        - generic [ref=e13]:
+          - strong [ref=e14]: "294"
+          - generic [ref=e15]: 卷卷有摘要，按朝代聚合。
+        - generic [ref=e16]:
+          - strong [ref=e17]: "16"
+          - generic [ref=e18]: 纪：周、秦、汉、魏、晋至五代。
+        - generic [ref=e19]:
+          - strong [ref=e20]: "1362"
+          - generic [ref=e21]: 年大势：前 403 至 959。
+        - generic [ref=e22]:
+          - strong [ref=e23]: 书页
+          - generic [ref=e24]: 摘要与全文原文统一阅读。
+  - navigation "卷目筛选" [ref=e25]:
+    - generic [ref=e27]:
+      - generic [ref=e28]: ⌕
+      - searchbox "⌕" [ref=e29]
+  - main [ref=e30]:
+    - generic [ref=e31]:
+      - heading "不是目录堆叠，而是一张可读的历史地图。" [level=2] [ref=e32]
+      - paragraph [ref=e33]: 页面以朝代为骨架，以卷为最小阅读单位。朝代柱图按卷数比例绘制；点击任一卷，左侧展开本卷要事，并可用书页效果阅读摘要或全文原文。
+    - region "朝代卷数柱状图" [ref=e34]
+    - generic [ref=e35]:
+      - complementary [ref=e36]
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - heading "全书 294 卷" [level=2] [ref=e40]
+          - paragraph [ref=e41]: 按朝代与历史阶段浏览；也可以直接搜索。
+        - generic [ref=e42]: 294 卷
+  - contentinfo [ref=e43]:
+    - generic [ref=e44]:
+      - generic [ref=e45]: 卷目参考：中国哲学书电子化计划《资治通鉴》目录；全文原文来自本地 EPUB 胡三省注本，按卷生成静态阅读数据。
+      - generic [ref=e46]:
+        - link "CTP 目录" [ref=e47] [cursor=pointer]:
+          - /url: https://ctext.org/wiki.pl?if=gb&remap=gb&res=593436
+        - text: ·
+        - link "GitHub 文本" [ref=e48] [cursor=pointer]:
+          - /url: https://github.com/JY0284/zizhitongjian
+        - text: · © allon.me

@@ -1,0 +1,203 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - text: 通
+          - text: 鑑
+        - generic [ref=e7]: allon.me · 全卷概要 · 古文竖排摘句
+      - generic [ref=e8]:
+        - paragraph [ref=e9]: 司馬光編年巨著 · 上起周威烈王二十三年，下迄後周顯德六年
+        - heading "資治通鑑 全卷提要" [level=1] [ref=e10]:
+          - text: 資治通鑑
+          - text: 全卷提要
+        - paragraph [ref=e11]: 把 294 卷拆成可以浏览、检索和反复回看的阅读地图：现代摘要横排梳理脉络，多段原文竖排展开，保留古书的阅读气息。
+      - generic "全书概览" [ref=e12]:
+        - generic [ref=e13]:
+          - strong [ref=e14]: "294"
+          - generic [ref=e15]: 卷卷有摘要，按朝代聚合。
+        - generic [ref=e16]:
+          - strong [ref=e17]: "16"
+          - generic [ref=e18]: 纪：周、秦、汉、魏、晋至五代。
+        - generic [ref=e19]:
+          - strong [ref=e20]: "1362"
+          - generic [ref=e21]: 年大势：前 403 至 959。
+        - generic [ref=e22]:
+          - strong [ref=e23]: 竖排
+          - generic [ref=e24]: 原文摘句与现代概要并置。
+  - navigation "卷目筛选" [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - generic [ref=e28]: ⌕
+        - searchbox "⌕" [ref=e29]
+      - generic [ref=e30]:
+        - button "全书" [ref=e3106] [cursor=pointer]
+        - button "周纪" [ref=e3107] [cursor=pointer]
+        - button "秦纪" [ref=e3108] [cursor=pointer]
+        - button "汉纪" [ref=e3109] [cursor=pointer]
+        - button "魏纪" [ref=e3110] [cursor=pointer]
+        - button "晋纪" [ref=e3111] [cursor=pointer]
+        - button "宋纪" [ref=e3112] [cursor=pointer]
+        - button "齐纪" [ref=e3113] [cursor=pointer]
+        - button "梁纪" [ref=e3114] [cursor=pointer]
+        - button "陈纪" [ref=e3115] [cursor=pointer]
+        - button "隋纪" [ref=e3116] [cursor=pointer]
+        - button "唐纪" [ref=e3117] [cursor=pointer]
+        - button "后梁纪" [ref=e3118] [cursor=pointer]
+        - button "后唐纪" [ref=e3119] [cursor=pointer]
+        - button "后晋纪" [ref=e3120] [cursor=pointer]
+        - button "后汉纪" [ref=e3121] [cursor=pointer]
+        - button "后周纪" [ref=e3122] [cursor=pointer]
+  - main [ref=e48]:
+    - generic [ref=e49]:
+      - heading "不是目录堆叠，而是一张可读的历史地图。" [level=2] [ref=e50]
+      - paragraph [ref=e51]: 页面以朝代为骨架，以卷为最小阅读单位。朝代比例尺按 294 卷的卷数占比横向展开；点击任一卷，左侧展开现代概要，并可打开多段竖排原文摘读。
+    - region "朝代卷数占比" [ref=e52]:
+      - generic [ref=e3123]:
+        - generic [ref=e3124]:
+          - generic [ref=e3125]: 朝代卷数比例尺
+          - generic [ref=e3126]: 横向宽度按卷数占比绘制；不再用高低起伏表达数据。
+        - generic [ref=e3127]: 秦纪 3 卷 · 占全书 1.0%
+      - generic [ref=e3129]:
+        - button "周纪，5卷，占全书1.7%" [ref=e3130] [cursor=pointer]:
+          - generic: 周纪 · 5卷 · 1.7%
+        - button "秦纪，3卷，占全书1.0%" [ref=e3131] [cursor=pointer]:
+          - generic: 秦纪 · 3卷 · 1.0%
+        - button "汉纪，60卷，占全书20%" [ref=e3132] [cursor=pointer]:
+          - generic: 汉纪 · 60卷 · 20%
+        - button "魏纪，10卷，占全书3%" [ref=e3133] [cursor=pointer]:
+          - generic: 魏纪 · 10卷 · 3%
+        - button "晋纪，40卷，占全书14%" [ref=e3134] [cursor=pointer]:
+          - generic: 晋纪 · 40卷 · 14%
+        - button "宋纪，16卷，占全书5%" [ref=e3135] [cursor=pointer]:
+          - generic: 宋纪 · 16卷 · 5%
+        - button "齐纪，10卷，占全书3%" [ref=e3136] [cursor=pointer]:
+          - generic: 齐纪 · 10卷 · 3%
+        - button "梁纪，22卷，占全书7%" [ref=e3137] [cursor=pointer]:
+          - generic: 梁纪 · 22卷 · 7%
+        - button "陈纪，10卷，占全书3%" [ref=e3138] [cursor=pointer]:
+          - generic: 陈纪 · 10卷 · 3%
+        - button "隋纪，8卷，占全书2.7%" [ref=e3139] [cursor=pointer]:
+          - generic: 隋纪 · 8卷 · 2.7%
+        - button "唐纪，81卷，占全书28%" [ref=e3140] [cursor=pointer]:
+          - generic: 唐纪 · 81卷 · 28%
+        - button "后梁纪，6卷，占全书2.0%" [ref=e3141] [cursor=pointer]:
+          - generic: 后梁纪 · 6卷 · 2.0%
+        - button "后唐纪，8卷，占全书2.7%" [ref=e3142] [cursor=pointer]:
+          - generic: 后唐纪 · 8卷 · 2.7%
+        - button "后晋纪，6卷，占全书2.0%" [ref=e3143] [cursor=pointer]:
+          - generic: 后晋纪 · 6卷 · 2.0%
+        - button "后汉纪，4卷，占全书1.4%" [ref=e3144] [cursor=pointer]:
+          - generic: 后汉纪 · 4卷 · 1.4%
+        - button "后周纪，5卷，占全书1.7%" [ref=e3145] [cursor=pointer]:
+          - generic: 后周纪 · 5卷 · 1.7%
+      - generic [ref=e3146]:
+        - button "周纪 5卷" [ref=e3147] [cursor=pointer]:
+          - generic [ref=e3149]: 周纪 5卷
+        - button "秦纪 3卷" [ref=e3150] [cursor=pointer]:
+          - generic [ref=e3152]: 秦纪 3卷
+        - button "汉纪 60卷" [ref=e3153] [cursor=pointer]:
+          - generic [ref=e3155]: 汉纪 60卷
+        - button "魏纪 10卷" [ref=e3156] [cursor=pointer]:
+          - generic [ref=e3158]: 魏纪 10卷
+        - button "晋纪 40卷" [ref=e3159] [cursor=pointer]:
+          - generic [ref=e3161]: 晋纪 40卷
+        - button "宋纪 16卷" [ref=e3162] [cursor=pointer]:
+          - generic [ref=e3164]: 宋纪 16卷
+        - button "齐纪 10卷" [ref=e3165] [cursor=pointer]:
+          - generic [ref=e3167]: 齐纪 10卷
+        - button "梁纪 22卷" [ref=e3168] [cursor=pointer]:
+          - generic [ref=e3170]: 梁纪 22卷
+        - button "陈纪 10卷" [ref=e3171] [cursor=pointer]:
+          - generic [ref=e3173]: 陈纪 10卷
+        - button "隋纪 8卷" [ref=e3174] [cursor=pointer]:
+          - generic [ref=e3176]: 隋纪 8卷
+        - button "唐纪 81卷" [ref=e3177] [cursor=pointer]:
+          - generic [ref=e3179]: 唐纪 81卷
+        - button "后梁纪 6卷" [ref=e3180] [cursor=pointer]:
+          - generic [ref=e3182]: 后梁纪 6卷
+        - button "后唐纪 8卷" [ref=e3183] [cursor=pointer]:
+          - generic [ref=e3185]: 后唐纪 8卷
+        - button "后晋纪 6卷" [ref=e3186] [cursor=pointer]:
+          - generic [ref=e3188]: 后晋纪 6卷
+        - button "后汉纪 4卷" [ref=e3189] [cursor=pointer]:
+          - generic [ref=e3191]: 后汉纪 4卷
+        - button "后周纪 5卷" [ref=e3192] [cursor=pointer]:
+          - generic [ref=e3194]: 后周纪 5卷
+    - generic [ref=e125]:
+      - complementary [ref=e126]:
+        - generic [ref=e3195]:
+          - paragraph [ref=e3196]: 秦纪 · 前255-前207 · 第 1/3 卷
+          - heading "卷第六·秦纪一~秦始皇帝上19年" [level=2] [ref=e3197]
+        - generic [ref=e3198]:
+          - paragraph [ref=e3199]: 本卷处在「秦并天下与秦亡」的开端段。秦国完成统一，又因苛政、继承与军政失衡迅速崩坏，楚汉之争由此展开。可重点观察一统与速亡，以及人物选择如何改变制度走向。
+          - generic [ref=e3200]:
+            - generic [ref=e3201]: 燕客蔡澤聞之，西入秦，先使人宣言於應侯曰：“蔡澤，天下雄辯之士；彼見王，必困君而奪君之位。”應侯怒，使人召之。蔡澤見應侯，禮又倨。應侯不快，因讓之曰：“子宣言欲代我相，請聞其說……
+            - generic [ref=e3202]:
+              - generic [ref=e3203]:
+                - strong [ref=e3204]: 本卷原文摘读
+                - text: 已从本卷原文中取 5 段，约 789 字。这里先露出开卷段，完整竖排阅读放在浮层里。
+              - generic [ref=e3205]: 秦末纪事
+          - generic [ref=e3206]:
+            - button "读原文摘段" [ref=e3207] [cursor=pointer]
+            - link "打开全文来源" [ref=e3208] [cursor=pointer]:
+              - /url: https://github.com/JY0284/zizhitongjian/blob/main/chapters/006_%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4%E7%AC%AC%E5%85%AD%E5%8D%B7(%E7%A7%A6%E7%BA%AA).md
+          - generic [ref=e3209]:
+            - generic [ref=e3210]: 秦并天下与秦亡
+            - generic [ref=e3211]: 兼并六国
+            - generic [ref=e3212]: 郡县帝国
+            - generic [ref=e3213]: 陈胜吴广
+      - generic [ref=e146]:
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - heading "秦纪 · 前255-前207" [level=2] [ref=e3214]
+            - paragraph [ref=e150]: 重点：兼并六国 / 郡县帝国 / 陈胜吴广
+          - generic [ref=e151]: 3 卷
+        - generic [ref=e152]:
+          - generic [ref=e3215]:
+            - generic [ref=e3216]: 秦纪
+            - text: 前255-前207 · 3 卷 · 占 1.0%
+          - generic [ref=e3217]:
+            - generic [ref=e3218]: 阅读主轴
+            - text: 一统与速亡
+          - generic [ref=e3219]:
+            - generic [ref=e3220]: 当前结果
+            - text: 3 卷匹配
+        - generic [ref=e159]:
+          - button "006 秦纪 秦并天下与秦亡 卷第六·秦纪一~秦始皇帝上19年 本卷处在「秦并天下与秦亡」的开端段。秦国完成统一，又因苛政、继承与军政失衡迅速崩坏，楚汉之争由此展开。可重点观察一统与速亡，以及人物选择如何改变制度走向。 前255-前207 · 原文 5 段" [ref=e3221] [cursor=pointer]:
+            - generic [ref=e3222]:
+              - generic [ref=e3223]: "006"
+              - generic [ref=e3224]:
+                - text: 秦纪
+                - text: 秦并天下与秦亡
+            - heading "卷第六·秦纪一~秦始皇帝上19年" [level=3] [ref=e3225]
+            - paragraph [ref=e3226]: 本卷处在「秦并天下与秦亡」的开端段。秦国完成统一，又因苛政、继承与军政失衡迅速崩坏，楚汉之争由此展开。可重点观察一统与速亡，以及人物选择如何改变制度走向。
+            - generic [ref=e3228]: 前255-前207 · 原文 5 段
+          - button "007 秦纪 秦并天下与秦亡 卷第七·秦纪二~二世皇帝上1年 本卷处在「秦并天下与秦亡」的转折段。秦国完成统一，又因苛政、继承与军政失衡迅速崩坏，楚汉之争由此展开。可重点观察一统与速亡，以及人物选择如何改变制度走向。 前255-前207 · 原文 5 段" [ref=e3231] [cursor=pointer]:
+            - generic [ref=e3232]:
+              - generic [ref=e3233]: "007"
+              - generic [ref=e3234]:
+                - text: 秦纪
+                - text: 秦并天下与秦亡
+            - heading "卷第七·秦纪二~二世皇帝上1年" [level=3] [ref=e3235]
+            - paragraph [ref=e3236]: 本卷处在「秦并天下与秦亡」的转折段。秦国完成统一，又因苛政、继承与军政失衡迅速崩坏，楚汉之争由此展开。可重点观察一统与速亡，以及人物选择如何改变制度走向。
+            - generic [ref=e3238]: 前255-前207 · 原文 5 段
+          - button "008 秦纪 秦并天下与秦亡 卷第八·秦纪三·~二世皇帝下3年 本卷处在「秦并天下与秦亡」的收束段。秦国完成统一，又因苛政、继承与军政失衡迅速崩坏，楚汉之争由此展开。可重点观察一统与速亡，以及人物选择如何改变制度走向。 前255-前207 · 原文 5 段" [ref=e3241] [cursor=pointer]:
+            - generic [ref=e3242]:
+              - generic [ref=e3243]: "008"
+              - generic [ref=e3244]:
+                - text: 秦纪
+                - text: 秦并天下与秦亡
+            - heading "卷第八·秦纪三·~二世皇帝下3年" [level=3] [ref=e3245]
+            - paragraph [ref=e3246]: 本卷处在「秦并天下与秦亡」的收束段。秦国完成统一，又因苛政、继承与军政失衡迅速崩坏，楚汉之争由此展开。可重点观察一统与速亡，以及人物选择如何改变制度走向。
+            - generic [ref=e3248]: 前255-前207 · 原文 5 段
+  - contentinfo [ref=e3100]:
+    - generic [ref=e3101]:
+      - generic [ref=e3102]: 卷目参考：中国哲学书电子化计划《资治通鉴》目录；竖排摘读来自公开文本，按卷提取多段原文。
+      - generic [ref=e3103]:
+        - link "CTP 目录" [ref=e3104] [cursor=pointer]:
+          - /url: https://ctext.org/wiki.pl?if=gb&remap=gb&res=593436
+        - text: ·
+        - link "GitHub 文本" [ref=e3105] [cursor=pointer]:
+          - /url: https://github.com/JY0284/zizhitongjian
+        - text: · © allon.me

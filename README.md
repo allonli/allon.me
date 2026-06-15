@@ -53,3 +53,9 @@ scp -r data/original root@106.14.134.49:/var/www/allon-root/data/
 - 页面卷题、起讫、开卷原文摘读、正文、胡注、绿色小注和统计数据均来自 EPUB。
 - 朝代比例尺使用柱状图，纵轴以 90 卷为上限，柱高按各朝代卷数线性绘制。
 - 首页卷目按桌面端卡片分页展示；点开卡片后在浮层中查看全宽本卷总结，并可切换到本卷原文。
+- 本卷原文支持两种阅读模式：**分页**（transform 翻页，适合逐页精读）和**连续滚动**（原生 overflow 滚动，适合快速浏览）。竖排古文采用 `writing-mode: vertical-rl`，行文从右到左，分页翻页方向已适配。
+- 浮层阅读器中的滚动条已全部隐藏（`.book-page` / `.vertical-reader` / `.original-page-viewport`）。
+
+## GitHub
+
+仓库地址：[https://github.com/allonli/allon.me](https://github.com/allonli/allon.me)

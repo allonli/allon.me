@@ -1216,7 +1216,7 @@ const html = `<!doctype html>
 
     .overlay-body {
       min-height: 0;
-      padding: 22px;
+      padding: 12px;
       overflow: hidden;
       background:
         radial-gradient(circle at 50% 0%, rgba(255, 250, 241, .16), transparent 34%),
@@ -1234,7 +1234,7 @@ const html = `<!doctype html>
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 0;
-      filter: drop-shadow(0 28px 44px rgba(0, 0, 0, .34));
+      filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .24));
     }
 
     .book-spread::after {
@@ -1282,6 +1282,10 @@ const html = `<!doctype html>
       border-radius: 9px;
       box-shadow: inset 0 0 34px rgba(82, 55, 28, .08);
       overflow: hidden;
+    }
+
+    .book-spread.is-original .book-page-full {
+      border-radius: 9px;
     }
 
     .book-page-kicker {
@@ -1551,6 +1555,192 @@ const html = `<!doctype html>
       display: grid;
       grid-template-rows: auto minmax(0, 1fr);
       overflow: hidden;
+    }
+
+    .original-page-count {
+      color: var(--red);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .original-pager {
+      position: relative;
+      min-height: 0;
+      height: 100%;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      overflow: hidden;
+      border-radius: 9px;
+      background: #fbf3df;
+    }
+
+    .original-page-viewport {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      outline: 0;
+      overscroll-behavior: contain;
+    }
+
+    .original-page-viewport .vertical-reader {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: max-content;
+      height: 100%;
+      overflow: visible;
+      transform: translateX(var(--original-offset, 0px));
+      will-change: transform;
+    }
+
+    .original-page-viewport .epub-text {
+      height: 100%;
+    }
+
+    .original-page-turn {
+      position: absolute;
+      top: 0;
+      bottom: 42px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: min(180px, 26%);
+      border: 0;
+      background: transparent;
+      color: var(--red);
+      cursor: pointer;
+      opacity: 1;
+      transition: opacity .18s ease;
+      font-size: 0;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .original-page-turn::before {
+      position: absolute;
+      top: 50%;
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 104px;
+      border: 1px solid rgba(159, 53, 42, .3);
+      border-radius: 10px;
+      background: rgba(255, 250, 241, .94);
+      box-shadow: 0 12px 28px rgba(31, 35, 40, .16);
+      font-size: 38px;
+      transform: translateY(-50%);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .original-page-turn:hover,
+    .original-page-turn:focus-visible {
+      opacity: 1;
+      outline: none;
+    }
+
+    .original-page-turn:hover::before,
+    .original-page-turn:focus-visible::before {
+      border-color: rgba(159, 53, 42, .48);
+      background: #fffaf1;
+      transform: translateY(-50%) scale(1.04);
+    }
+
+    .original-page-turn.is-forward {
+      left: 0;
+    }
+
+    .original-page-turn.is-forward::before {
+      content: "‹";
+      left: 18px;
+    }
+
+    .original-page-turn.is-back {
+      right: 0;
+    }
+
+    .original-page-turn.is-back::before {
+      content: "›";
+      right: 18px;
+    }
+
+    .original-pager.has-paged .original-page-turn {
+      opacity: 0;
+    }
+
+    .original-pager.has-paged .original-page-turn:hover,
+    .original-pager.has-paged .original-page-turn:focus-visible {
+      opacity: 1;
+    }
+
+    .original-page-turn:disabled {
+      cursor: default;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .original-page-footer {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      min-height: 42px;
+      padding: 8px 14px 10px;
+      border-top: 1px solid rgba(159, 53, 42, .12);
+      background: rgba(255, 250, 241, .72);
+    }
+
+    .original-page-progress {
+      width: 100%;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(to left, var(--red) 0 var(--original-progress, 0%), rgba(42, 35, 27, .14) var(--original-progress, 0%) 100%);
+      direction: rtl;
+      appearance: none;
+      -webkit-appearance: none;
+      accent-color: var(--red);
+      cursor: pointer;
+    }
+
+    .original-page-progress::-webkit-slider-runnable-track {
+      height: 4px;
+      border-radius: 999px;
+      background: transparent;
+    }
+
+    .original-page-progress::-webkit-slider-thumb {
+      width: 12px;
+      height: 12px;
+      margin-top: -4px;
+      border: 2px solid #fffaf1;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 2px 8px rgba(31, 35, 40, .22);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .original-page-progress::-moz-range-track {
+      height: 4px;
+      border-radius: 999px;
+      background: transparent;
+    }
+
+    .original-page-progress::-moz-range-progress {
+      height: 4px;
+      border-radius: 999px;
+      background: var(--red);
+    }
+
+    .original-page-progress::-moz-range-thumb {
+      width: 10px;
+      height: 10px;
+      border: 2px solid #fffaf1;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 2px 8px rgba(31, 35, 40, .22);
     }
 
     .book-source a {
@@ -2866,9 +3056,122 @@ const html = `<!doctype html>
       return '<div class="book-spread is-original">' +
         '<article class="book-page book-page-full original-page">' +
           '<div class="book-source"><span>' + escapeHtml("本卷原文 · 全文 " + blocks.length + " 段 / 约 " + formatCount(chars) + " 字 · 绿色小注 " + formatCount(original.noteCount || volume.noteCount) + " 处") + '</span><span>' + escapeHtml(sourceLabel) + '</span></div>' +
-          '<div class="vertical-reader"><div class="epub-text">' + renderEpubBlocks(blocks) + '</div></div>' +
+          '<div class="original-pager" data-original-pager>' +
+            '<button class="original-page-turn is-forward" type="button" data-page-turn="1" aria-label="下一页">‹</button>' +
+            '<div class="original-page-viewport" tabindex="0" aria-label="分页原文阅读器"><div class="vertical-reader original-paged-reader"><div class="epub-text">' + renderEpubBlocks(blocks) + '</div></div></div>' +
+            '<button class="original-page-turn is-back" type="button" data-page-turn="-1" aria-label="上一页">›</button>' +
+            '<div class="original-page-footer"><input id="originalPageProgress" class="original-page-progress" type="range" min="0" value="0" aria-label="原文页码进度"><span class="original-page-count" id="originalPageCount">第 1 页</span></div>' +
+          '</div>' +
         '</article>' +
       '</div>';
+    }
+
+    function originalViewport() {
+      return byId("bookReader").querySelector(".original-page-viewport");
+    }
+
+    function sizeOriginalContent(viewport) {
+      const reader = viewport?.querySelector(".original-paged-reader");
+      const text = viewport?.querySelector(".epub-text");
+      if (!reader || !text) return;
+      const width = Math.max(viewport.clientWidth, Math.ceil(text.scrollWidth + 24));
+      reader.style.width = width + "px";
+      reader.style.minWidth = width + "px";
+      viewport.dataset.contentWidth = String(width);
+    }
+
+    function originalPageMetrics(viewport) {
+      sizeOriginalContent(viewport);
+      const width = Math.max(1, viewport.clientWidth);
+      const contentWidth = Number(viewport?.dataset.contentWidth || 0);
+      const max = Math.max(0, contentWidth - width);
+      const total = Math.max(1, Math.ceil((max + width) / width));
+      const page = clamp(Number(viewport?.dataset.page || 0), 0, total - 1);
+      return { width, max, total, page };
+    }
+
+    function updateOriginalPager(viewport) {
+      if (!viewport) return;
+      const metrics = originalPageMetrics(viewport);
+      const count = byId("originalPageCount");
+      if (count) count.textContent = "第 " + (metrics.page + 1) + " / " + metrics.total + " 页";
+      const progress = byId("originalPageProgress");
+      if (progress) {
+        const maxPage = Math.max(0, metrics.total - 1);
+        const progressPercent = maxPage ? (metrics.page / maxPage) * 100 : 0;
+        progress.max = String(maxPage);
+        progress.value = String(metrics.page);
+        progress.style.setProperty("--original-progress", progressPercent + "%");
+      }
+      byId("bookReader").querySelectorAll("[data-page-turn]").forEach((button) => {
+        const direction = Number(button.dataset.pageTurn);
+        button.disabled = direction < 0 ? metrics.page <= 0 : metrics.page >= metrics.total - 1;
+      });
+    }
+
+    function setOriginalPage(page, markUsed = false) {
+      const viewport = originalViewport();
+      if (!viewport) return;
+      const metrics = originalPageMetrics(viewport);
+      const targetPage = clamp(page, 0, metrics.total - 1);
+      const offset = Math.min(targetPage * metrics.width, metrics.max);
+      if (markUsed && targetPage !== metrics.page) {
+        byId("bookReader").querySelector("[data-original-pager]")?.classList.add("has-paged");
+      }
+      viewport.dataset.page = String(targetPage);
+      viewport.dataset.offset = String(offset);
+      viewport.style.setProperty("--original-offset", offset + "px");
+      updateOriginalPager(viewport);
+    }
+
+    function turnOriginalPage(direction) {
+      const viewport = originalViewport();
+      if (!viewport) return;
+      const metrics = originalPageMetrics(viewport);
+      setOriginalPage(metrics.page + direction, true);
+    }
+
+    function setupOriginalPager() {
+      const viewport = originalViewport();
+      if (!viewport) return;
+      const pager = byId("bookReader").querySelector("[data-original-pager]");
+      setOriginalPage(0);
+      byId("bookReader").querySelectorAll("[data-page-turn]").forEach((button) => {
+        button.addEventListener("click", () => turnOriginalPage(Number(button.dataset.pageTurn)));
+      });
+      byId("originalPageProgress")?.addEventListener("input", (event) => {
+        setOriginalPage(Number(event.target.value), true);
+      });
+      viewport.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft" || event.key === "PageDown") {
+          event.preventDefault();
+          turnOriginalPage(1);
+        }
+        if (event.key === "ArrowRight" || event.key === "PageUp") {
+          event.preventDefault();
+          turnOriginalPage(-1);
+        }
+      });
+      let wheelLocked = false;
+      let wheelTimer = 0;
+      (pager || viewport).addEventListener("wheel", (event) => {
+        const absX = Math.abs(event.deltaX);
+        const absY = Math.abs(event.deltaY);
+        if (absX < 28 || absX <= absY * 1.15) return;
+        event.preventDefault();
+        if (!wheelLocked) {
+          wheelLocked = true;
+          turnOriginalPage(event.deltaX > 0 ? 1 : -1);
+        }
+        window.clearTimeout(wheelTimer);
+        wheelTimer = window.setTimeout(() => {
+          wheelLocked = false;
+        }, 280);
+      }, { passive: false });
+      requestAnimationFrame(() => {
+        setOriginalPage(Number(viewport.dataset.page || 0));
+        viewport.focus({ preventScroll: true });
+      });
     }
 
     function renderLoadingBook(text) {
@@ -2915,6 +3218,7 @@ const html = `<!doctype html>
         const original = await loadOriginal(volume.number);
         if (activeLoadToken === token) {
           byId("bookReader").innerHTML = renderOriginalBook(volume, original);
+          setupOriginalPager();
           resetBookPosition();
         }
       } catch (error) {
